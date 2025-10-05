@@ -7,15 +7,14 @@ void main()
 	scanf("%f", &basic_salary);
 	float HRA = 0.1 * basic_salary;
 	float DA = 0.3 * basic_salary;
-	int a = (int) basic_salary;
-	if(basic_salary == a)//check if the number is an integer.
+	float gross_salary = basic_salary + HRA + DA + TA;//Calculate the gross/final salary
+	int a = (int) gross_salary;
+	if(gross_salary == a)//check if the gross salary is an integer.
 	{
-		int final_salary = (int) basic_salary + HRA + DA + TA;//Calculate the gross/final salary
-		printf("The gross salary is: %d\n", final_salary);
+		printf("The gross salary is: %d\n", (int)gross_salary);
 	}
 	else 
 	{
-		float final_salary = basic_salary + HRA + DA + TA;//Calculate the gross/final salary
-		printf("The gross salary is: %f\n", final_salary);
+		printf("The gross salary is: %f.2\n", gross_salary);
 	}
 }
